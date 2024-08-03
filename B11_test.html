@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>The future of web design, today</title>
+    <style>
+        .icon {
+            margin-right: 10px;
+        }
+
+        .hero-image {
+            background-image: url('https://source.unsplash.com/random/800x600?nature');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .featured-item-image {
+            background-size: cover;
+            background-position: center;
+        }
+
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text {
+            letter-spacing: -1px;
+        }
+
+        .logo-accent {
+            color: var(--secondary-color);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 0;
+        }
+
+        .hero-content {
+            width: 50%;
+        }
+
+        .hero-image {
+            width: 45%;
+            height: 400px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .what-we-do {
+            display: flex;
+            justify-content: space-between;
+            margin: 4rem 0;
+        }
+
+        .what-we-do-text {
+            width: 45%;
+        }
+
+        .what-we-do-list {
+            width: 45%;
+        }
+
+        .what-we-do-list div {
+            background-color: #fff;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .what-we-do-list div:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-things {
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .featured-items {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .featured-item {
+            width: 30%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .featured-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .featured-item-image {
+            height: 200px;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .mission-statement {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .mission-statement p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .footer-links,
+        .footer-contact,
+        .footer-newsletter {
+            flex: 1;
+            margin: 0 2rem;
+        }
+
+        .footer-links ul,
+        .footer-contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-links li,
+        .footer-contact li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-newsletter form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-newsletter input,
+        .footer-newsletter button {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .footer-newsletter button {
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: grey;
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid #555;
+            padding-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero,
+            .what-we-do,
+            .featured-items,
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .hero-content,
+            .hero-image,
+            .what-we-do-text,
+            .what-we-do-list,
+            .featured-item {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .footer-links,
+            .footer-contact,
+            .footer-newsletter {
+                margin: 1rem 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-text">Eco<span class="logo-accent">Design</span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home icon"></i>Home</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle icon"></i>About Us</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart icon"></i>Shop</a></li>
+                    <li><a href="#"><i class="fas fa-envelope icon"></i>Contact</a></li>
+                </ul>
+            </nav>
+            <button class="cta-button"><i class="fas fa-rocket icon"></i>Get Started</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1><i class="fas fa-tree icon"></i>The future of eco-friendly web design</h1>
+                <p>Creating beautiful, sustainable websites for a greener tomorrow.</p>
+                <button class="cta-button"><i class="fas fa-leaf icon"></i>Learn More</button>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+
+        <section>
+            <div>Don't forget to grab this one, it's free!</div>
+            <div>Download the Ultimate guide to leisure guide.</div>
+            <button class="cta-button">Call to action</button>
+        </section>
+
+        <section class="what-we-do">
+            <div class="what-we-do-text">
+                <h2>What we do</h2>
+                <p>Our mission is very important to the planet: we plant as many trees as possible.</p>
+                <p>Can you figure out?</p>
+            </div>
+            <div class="what-we-do-list">
+                <div>We recycle everything we see</div>
+                <div>We teach people how to reuse their stuff</div>
+                <div>We believe in human beings as problem solver</div>
+            </div>
+        </section>
+
+        <section class="featured-things">
+            <h2><i class="fas fa-star icon"></i>Featured Projects</h2>
+            <p>Discover our eco-friendly web design solutions.</p>
+            <div class="featured-items">
+                <div class="featured-item">
+                    <div class="featured-item-image"
+                        style="background-image: url('https://source.unsplash.com/random/400x300?website');"></div>
+                    <h3><i class="fas fa-globe icon"></i>Sustainable E-commerce</h3>
+                    <p>Energy-efficient online store design</p>
+                </div>
+                <div class="featured-item">
+                    <div class="featured-item-image"
+                        style="background-image: url('https://source.unsplash.com/random/400x300?nature');"></div>
+                    <h3><i class="fas fa-leaf icon"></i>Green Blog Platform</h3>
+                    <p>Minimalist, fast-loading blog design</p>
+                </div>
+                <div class="featured-item">
+                    <div class="featured-item-image"
+                        style="background-image: url('https://source.unsplash.com/random/400x300?technology');"></div>
+                    <h3><i class="fas fa-solar-panel icon"></i>Eco-Tech Showcase</h3>
+                    <p>Showcasing green technologies online</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <section class="mission-statement">
+        <div class="container">
+            <p>Our mission is very important to the planet: we plant as many trees as possible. Can you figure out?</p>
+            <button class="cta-button">Call to action</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo"></div>
+            <div class="footer-links">
+                <h3>More information</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Shop</li>
+                    <li>Contacts</li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Stay in contact</h3>
+                <ul>
+                    <li>info@untitlui.com</li>
+                    <li>+34 654 654 654</li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Suscribe now to the newsletter</h3>
+                <form>
+                    <input type="text" placeholder="Your name">
+                    <input type="email" placeholder="Your email">
+                    <label>
+                        <input type="checkbox"> I consent the privacy policy
+                    </label>
+                    <button type="submit">Subscribe!</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Basic Components © 2023. All rights reserved.</p>
+            <p>Privacy Policy • Cookie Policy • Legal Notice • FAQ • Made by Squair</p>
+        </div>
+    </footer>
+</body>
+
+</html>
